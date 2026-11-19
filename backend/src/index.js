@@ -26,11 +26,8 @@ const server = express();
 
 // --- CORS whitelist (exact origins only) ---
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:5174",
-  "https://backendicabmet.icabmet.com",
-  "https://icabmet.com",
-  "http://icabmet.com",
+  "https://icabmet.cerada.in",
+  "http://icabmet.cerada.in",
 ];
 
 server.use(
