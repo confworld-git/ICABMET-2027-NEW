@@ -18,11 +18,11 @@ export default function Sidebar({ value }) {
       <div
         className={`${
           sidebarOpen ? "block" : "hidden"
-        } w-screen h-screen bg-black opacity-40 transition-transform duration-300 ease-in-out fixed top-0 left-0 z-40`}
+        } w-screen h-screen bg-black opacity-40 transition-transform duration-300 ease-in-out fixed top-0 left-0 z-60`}
         onClick={isOpenSidebar}
       ></div>
       <div
-        className={`fixed top-0 right-0 w-80 h-screen bg-gray-100 z-50 shadow-lg overflow-auto p-5 ${
+        className={`fixed top-0 right-0 w-80 h-screen bg-gray-100 z-60 shadow-lg overflow-auto p-5 ${
           sidebarOpen ? "translate-x-0" : "translate-x-100"
         } transition-transform duration-300 ease-in-out`}
       >

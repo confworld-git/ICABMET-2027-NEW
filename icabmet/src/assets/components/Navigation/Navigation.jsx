@@ -10,7 +10,7 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  
+
   // Check if current page is home
   const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
@@ -42,17 +42,20 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className={`${isHomePage ? 'bg-rose-700' : isScrolled ? 'bg-rose-700' : 'bg-white shadow-md'} fixed top-6 lg:top-18 left-0 right-0 z-40 py-3 px-4 lg:px-4 2xl:px-20 transition-all duration-700 ease-in-out`}>
+      <nav
+        className={`${isHomePage ? "bg-rose-700" : isScrolled ? "bg-rose-700" : "bg-white shadow-md"} fixed top-6 lg:top-18 left-0 right-0 z-40 py-3 px-4 lg:px-4 2xl:px-20 transition-all duration-700 ease-in-out`}
+      >
         <div className="w-full mx-auto flex items-center justify-between gap-x-4">
-          <a 
-            href="/" 
+          <a
+            href="/"
             className="flex-shrink-0 transition-all duration-700 ease-in-out transform hover:scale-105 hover:shadow-xl"
             onClick={closeMobileMenu}
           >
-            <img 
-              src={(isHomePage || isScrolled) 
-                ? "/images/logo/icabmet.png" 
-                : "/images/logo/icabmet.png"
+            <img
+              src={
+                isHomePage || isScrolled
+                  ? "/images/logo/icabmet.png"
+                  : "/images/logo/icabmet.png"
               }
               alt="ICABMET Logo"
               className="h-16 w-auto transition-all duration-700 ease-in-out bg-white p-1"
@@ -66,9 +69,9 @@ export default function Navigation() {
                   <a
                     href={item.path}
                     className={`inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md transition-all duration-700 ease-in-out transform hover:scale-105 ${
-                      isHomePage 
-                        ? 'text-rose-600 bg-white hover:bg-rose-600 hover:text-white shadow-lg' 
-                        : 'text-white bg-rose-600 shadow-md'
+                      isHomePage
+                        ? "text-rose-600 bg-white hover:bg-rose-600 hover:text-white shadow-lg"
+                        : "text-white bg-rose-600 shadow-md"
                     }`}
                   >
                     {item.title}
@@ -78,28 +81,42 @@ export default function Navigation() {
                     href={item.path}
                     className={`flex items-center gap-x-0 px-3 py-2 text-sm font-medium whitespace-nowrap transition-all duration-700 ease-in-out relative group ${
                       location.pathname === item.path
-                        ? (isHomePage || isScrolled) ? "text-orange-300 font-semibold" : "text-orange-500 font-semibold"
-                        : (isHomePage || isScrolled) ? "text-white hover:text-orange-300" : "text-gray-700 hover:text-rose-600"
+                        ? isHomePage || isScrolled
+                          ? "text-orange-300 font-semibold"
+                          : "text-orange-500 font-semibold"
+                        : isHomePage || isScrolled
+                          ? "text-white hover:text-orange-300"
+                          : "text-gray-700 hover:text-rose-600"
                     }`}
                   >
                     <span className="relative z-10">{item.title}</span>
-                    <span className={`absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${
-                      (isHomePage || isScrolled) ? 'bg-orange-500/20' : 'bg-rose-500/10'
-                    }`}></span>
+                    <span
+                      className={`absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${
+                        isHomePage || isScrolled
+                          ? "bg-orange-500/20"
+                          : "bg-rose-500/10"
+                      }`}
+                    ></span>
                     {item.children && (
                       <RiArrowDropDownLine className="text-xl -ml-0.5 group-hover:rotate-180 transition-transform duration-500 relative z-10" />
                     )}
                   </a>
                 ) : (
-                  <div className={`flex items-center gap-x-0 px-3 py-2 text-sm font-medium whitespace-nowrap cursor-pointer transition-all duration-700 ease-in-out relative ${
-                    (isHomePage || isScrolled)
-                      ? "text-white group-hover:text-orange-300" 
-                      : "text-gray-700 group-hover:text-rose-600"
-                  }`}>
+                  <div
+                    className={`flex items-center gap-x-0 px-3 py-2 text-sm font-medium whitespace-nowrap cursor-pointer transition-all duration-700 ease-in-out relative ${
+                      isHomePage || isScrolled
+                        ? "text-white group-hover:text-orange-300"
+                        : "text-gray-700 group-hover:text-rose-600"
+                    }`}
+                  >
                     <span className="relative z-10">{item.title}</span>
-                    <span className={`absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${
-                      (isHomePage || isScrolled) ? 'bg-orange-500/20' : 'bg-rose-500/10'
-                    }`}></span>
+                    <span
+                      className={`absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${
+                        isHomePage || isScrolled
+                          ? "bg-orange-500/20"
+                          : "bg-rose-500/10"
+                      }`}
+                    ></span>
                     {item.children && (
                       <RiArrowDropDownLine className="text-lg group-hover:rotate-180 transition-transform duration-500 relative z-10" />
                     )}
@@ -138,9 +155,9 @@ export default function Navigation() {
           <button
             onClick={toggleMobileMenu}
             className={`lg:hidden p-2 transition-all duration-700 ease-in-out ${
-              (isHomePage || isScrolled)
-                ? 'text-white hover:text-orange-300' 
-                : 'text-rose-600 hover:text-orange-500'
+              isHomePage || isScrolled
+                ? "text-white hover:text-orange-300"
+                : "text-rose-600 hover:text-orange-500"
             }`}
             aria-label="Toggle navigation menu"
           >
@@ -159,12 +176,12 @@ export default function Navigation() {
 
       {/* Mobile sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-40 lg:hidden transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-60 lg:hidden transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between p-4 border-b bg-rose-600">
-          <img 
+          <img
             src="/images/logo/icabmet.png"
             alt="ICABMET Logo"
             className="h-10 w-auto shadow-lg bg-white"
