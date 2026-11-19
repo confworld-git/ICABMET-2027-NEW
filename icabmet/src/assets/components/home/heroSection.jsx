@@ -19,10 +19,10 @@ export default function HeroSection() {
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
         const minutes = Math.floor(
-          (difference % (1000 * 60 * 60)) / (1000 * 60)
+          (difference % (1000 * 60 * 60)) / (1000 * 60),
         );
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
@@ -61,8 +61,8 @@ export default function HeroSection() {
             <div className="space-y-4 py-4 lg:py-8">
               {/* Main Title */}
               <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-rose-700">
-                3<sup>rd</sup> International Conference on Applied Science, Business and
-                Management, Engineering & Technology
+                3<sup>rd</sup> International Conference on Applied Science,
+                Business and Management, Engineering & Technology
                 <span className="text-lg sm:text-xl lg:text-3xl text-rose-600 mt-2">
                   {" "}
                   (ICABMET-2027)
@@ -85,8 +85,7 @@ export default function HeroSection() {
                 <p className="text-base sm:text-lg">
                   <span className="font-bold">Organized by: </span>
                   <span className="font-semibold">
-                    Confworld
-                    Educational Research and Development Association
+                    Confworld Educational Research and Development Association
                   </span>
                 </p>
                 <p className="text-base sm:text-lg font-bold text-gray-900">
@@ -101,16 +100,27 @@ export default function HeroSection() {
                 <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg shadow border border-rose-100">
                   <svg
                     className="w-4 h-4 text-rose-600 animate-bounce"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-calendar-days preview-icon"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
+                    <path d="M8 2v3" />
+                    <path d="M16 2v3" />
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="M8 13h.01" />
+                    <path d="M12 13h.01" />
+                    <path d="M16 13h.01" />
+                    <path d="M8 17h.01" />
+                    <path d="M12 17h.01" />
+                    <path d="M16 17h.01" />
                   </svg>
                   <span className="text-xs sm:text-sm font-semibold text-gray-600">
                     Date:
@@ -124,16 +134,19 @@ export default function HeroSection() {
                 <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg shadow border border-rose-100">
                   <svg
                     className="w-4 h-4 text-rose-600 animate-bounce"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-map-pin preview-icon"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
                   </svg>
                   <span className="text-xs sm:text-sm font-semibold text-gray-600">
                     Location:
@@ -149,10 +162,26 @@ export default function HeroSection() {
                 <div className="px-2 rounded-lg w-full sm:w-auto">
                   <div className="flex justify-center md:justify-start gap-2 sm:gap-3">
                     {[
-                      { label: "Days",    value: timeLeft.days,    bg: "bg-rose-700" },
-                      { label: "Hours",   value: timeLeft.hours,   bg: "bg-rose-600" },
-                      { label: "Minutes", value: timeLeft.minutes, bg: "bg-rose-700" },
-                      { label: "Seconds", value: timeLeft.seconds, bg: "bg-rose-600" },
+                      {
+                        label: "Days",
+                        value: timeLeft.days,
+                        bg: "bg-rose-700",
+                      },
+                      {
+                        label: "Hours",
+                        value: timeLeft.hours,
+                        bg: "bg-rose-600",
+                      },
+                      {
+                        label: "Minutes",
+                        value: timeLeft.minutes,
+                        bg: "bg-rose-700",
+                      },
+                      {
+                        label: "Seconds",
+                        value: timeLeft.seconds,
+                        bg: "bg-rose-600",
+                      },
                     ].map((item, index) => (
                       <div key={index} className="text-center">
                         <div
@@ -169,7 +198,7 @@ export default function HeroSection() {
                     ))}
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
 
             {/* Right Content - Video */}

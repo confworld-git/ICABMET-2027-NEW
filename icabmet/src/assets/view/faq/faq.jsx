@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "How do I contact the conference organizers?",
-    a: "For general inquiries, please email info@confworld.org. For registration-related queries, email info@icabmet.com. For sponsorship opportunities, reach out to collaboration@confworld.org.",
+    a: "For general inquiries, please email info@confworld.org. For registration-related queries, email icabmet.cerada@gmail.com. For sponsorship opportunities, reach out to collaboration@confworld.org.",
   },
   {
     q: "Will my presented paper be published?",
